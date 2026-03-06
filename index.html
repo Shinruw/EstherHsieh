@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esther Hsieh｜品牌文案・行銷寫作</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --cream: #F7F3EE; --warm-white: #FDFAF6; --brown: #6B4F3A; --dark-brown: #3D2B1F; --muted: #9C8878; --accent: #C4956A; --light-accent: #E8D5C0; --text: #2C1F14; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Serif TC', serif; background-color: var(--warm-white); color: var(--text); line-height: 1.8; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,250,246,0.92); backdrop-filter: blur(8px); padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--light-accent); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark-brown); letter-spacing: 0.05em; text-decoration: none; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 0.85rem; color: var(--brown); letter-spacing: 0.08em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  #hero { min-height: 100vh; background-color: var(--cream); display: flex; align-items: center; padding: 120px 60px 80px; position: relative; overflow: hidden; }
+  .hero-bg-text { position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: 'Playfair Display', serif; font-size: 20vw; color: rgba(196,149,106,0.07); line-height: 1; user-select: none; pointer-events: none; white-space: nowrap; }
+  .hero-content { max-width: 680px; position: relative; z-index: 1; }
+  .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.25em; color: var(--accent); margin-bottom: 24px; text-transform: uppercase; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 1.15; color: var(--dark-brown); margin-bottom: 20px; }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .divider { width: 48px; height: 1px; background: var(--accent); margin: 24px 0; }
+  .hero-subtitle { font-size: 1.05rem; color: var(--brown); margin-bottom: 16px; font-weight: 300; line-height: 2; }
+  .hero-tagline { font-size: 0.9rem; color: var(--muted); margin-bottom: 48px; letter-spacing: 0.05em; }
+  .hero-cta { display: inline-block; padding: 14px 40px; background-color: var(--dark-brown); color: var(--warm-white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.12em; transition: background 0.3s, transform 0.2s; }
+  .hero-cta:hover { background-color: var(--accent); transform: translateY(-2px); }
+  .hero-cta-ghost { display: inline-block; padding: 14px 40px; border: 1px solid var(--brown); color: var(--brown); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.12em; margin-left: 16px; transition: all 0.3s; }
+  .hero-cta-ghost:hover { background: var(--brown); color: var(--warm-white); }
+  .scroll-down { position: absolute; bottom: 40px; left: 60px; display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.15em; }
+  .scroll-line { width: 40px; height: 1px; background: var(--muted); animation: scrollLine 2s ease-in-out infinite; }
+  @keyframes scrollLine { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.4); } }
+  #about { padding: 120px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .about-photo-placeholder { aspect-ratio: 3/4; background: var(--cream); border: 1px solid var(--light-accent); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); font-size: 0.85rem; letter-spacing: 0.1em; position: relative; overflow: hidden; }
+  .about-photo-placeholder::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(to right, var(--accent), var(--light-accent)); }
+  .about-photo-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--light-accent); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+  .section-label { font-size: 0.75rem; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--dark-brown); line-height: 1.3; margin-bottom: 28px; }
+  .about-text { color: var(--brown); font-size: 0.95rem; line-height: 2.1; margin-bottom: 20px; }
+  .about-stats { display: flex; gap: 40px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--light-accent); }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); display: block; }
+  .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; }
+  #services { background-color: var(--cream); padding: 120px 60px; }
+  .services-header { text-align: center; max-width: 560px; margin: 0 auto 72px; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+  .service-card { background: var(--warm-white); padding: 48px 36px; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+  .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 0; background: var(--accent); transition: height 0.3s; }
+  .service-card:hover::after { height: 3px; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(107,79,58,0.08); }
+  .service-icon { width: 48px; height: 48px; background: var(--light-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 24px; }
+  .service-name { font-size: 1rem; font-weight: 500; color: var(--dark-brown); margin-bottom: 12px; letter-spacing: 0.05em; }
+  .service-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.9; }
+  #cases { padding: 120px 60px; max-width: 1100px; margin: 0 auto; }
+  .cases-header { margin-bottom: 72px; }
+  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .case-card { border: 1px solid var(--light-accent); padding: 44px 40px; position: relative; transition: border-color 0.3s; }
+  .case-card:hover { border-color: var(--accent); }
+  .case-card.featured { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; background: var(--cream); border: none; padding: 60px; }
+  .case-num { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--light-accent); line-height: 1; margin-bottom: 20px; }
+  .case-brand { font-size: 1.1rem; font-weight: 500; color: var(--dark-brown); margin-bottom: 8px; }
+  .case-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--accent); border: 1px solid var(--accent); padding: 3px 10px; margin-bottom: 16px; }
+  .case-desc { font-size: 0.88rem; color: var(--brown); line-height: 2; }
+  .case-img-placeholder { aspect-ratio: 4/3; background: var(--light-accent); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.1em; }
+  #articles { background: var(--cream); padding: 120px 60px; }
+  .articles-header { display: flex; justify-content: space-between; align-items: flex-end; max-width: 1100px; margin: 0 auto 56px; }
+  .articles-more { font-size: 0.8rem; letter-spacing: 0.15em; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+  .article-card { background: var(--warm-white); cursor: pointer; transition: transform 0.3s; }
+  .article-card:hover { transform: translateY(-4px); }
+  .article-img { aspect-ratio: 16/10; background: var(--light-accent); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .article-img-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, var(--cream) 0%, var(--light-accent) 100%); opacity: 0.6; }
+  .article-img-icon { position: relative; z-index: 1; font-size: 2rem; }
+  .article-body { padding: 28px 28px 32px; }
+  .article-cat { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+  .article-title { font-size: 1rem; color: var(--dark-brown); line-height: 1.6; margin-bottom: 12px; font-weight: 500; }
+  .article-excerpt { font-size: 0.82rem; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+  .article-date { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
+  #contact { padding: 120px 60px; max-width: 760px; margin: 0 auto; text-align: center; }
+  .contact-sub { font-size: 0.95rem; color: var(--brown); margin-bottom: 56px; line-height: 2; }
+  .contact-form { text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group.full { grid-column: span 2; }
+  label { font-size: 0.75rem; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 8px; }
+  input, textarea, select { border: 1px solid var(--light-accent); background: var(--cream); padding: 14px 16px; font-family: 'Noto Serif TC', serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; width: 100%; }
+  input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 120px; }
+  .submit-btn { width: 100%; padding: 18px; background: var(--dark-brown); color: var(--warm-white); border: none; font-family: 'Noto Serif TC', serif; font-size: 0.9rem; letter-spacing: 0.15em; cursor: pointer; margin-top: 8px; transition: background 0.3s; }
+  .submit-btn:hover { background: var(--accent); }
+  footer { background: var(--dark-brown); color: var(--light-accent); padding: 48px 60px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--warm-white); }
+  .footer-text { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="nav-logo">Esther Hsieh</a>
+  <ul class="nav-links">
+    <li><a href="#about">關於我</a></li>
+    <li><a href="#services">服務項目</a></li>
+    <li><a href="#cases">合作案例</a></li>
+    <li><a href="#articles">文章</a></li>
+    <li><a href="#contact">聯絡合作</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-bg-text">Write</div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Brand Copywriter &amp; Marketing</p>
+    <h1 class="hero-title">讓品牌<br>被看見，<em>被感受</em></h1>
+    <div class="divider"></div>
+    <p class="hero-subtitle">從農業、家居、醫療到保養品，<br>用有溫度的文字，幫助品牌與人真實相遇。</p>
+    <p class="hero-tagline">品牌文案・部落格・社群・電子報・品牌故事</p>
+    <a href="#cases" class="hero-cta">看合作案例</a>
+    <a href="#contact" class="hero-cta-ghost">與我合作</a>
+  </div>
+  <div class="scroll-down"><span class="scroll-line"></span>Scroll</div>
+</section>
+<section id="about">
+  <div class="about-photo-placeholder">
+    <div class="about-photo-icon">✦</div>
+    <span>個人照片</span>
+  </div>
+  <div>
+    <p class="section-label">About Esther</p>
+    <h2 class="section-title">從子宮寫到外太空，<br>相信文字的力量</h2>
+    <p class="about-text">我是 Esther，一個相信「好文字能改變人與品牌之間距離」的行銷文案工作者。</p>
+    <p class="about-text">從農產品到診所品牌，從家居到保養品，我擅長找出品牌最真實的核心，用溫暖而有說服力的語言，讓客戶的客戶感受到「就是這個」的共鳴。</p>
+    <p class="about-text">我不只是寫手，更是你品牌的第一位讀者——協助你把對的話，說給對的人聽。</p>
+    <div class="about-stats">
+      <div><span class="stat-num">5+</span><span class="stat-label">品牌合作</span></div>
+      <div><span class="stat-num">3+</span><span class="stat-label">年行銷經驗</span></div>
+      <div><span class="stat-num">∞</span><span class="stat-label">對文字的熱情</span></div>
+    </div>
+  </div>
+</section>
+<section id="services">
+  <div class="services-header">
+    <p class="section-label">Services</p>
+    <h2 class="section-title">我能為你做什麼</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">✍️</div><p class="service-name">品牌文案</p><p class="service-desc">從品牌核心出發，撰寫官網、產品頁、廣告文案，讓每一個字都為品牌說話。</p></div>
+    <div class="service-card"><div class="service-icon">📖</div><p class="service-name">部落格代寫</p><p class="service-desc">深入研究你的產業與讀者，產出兼具 SEO 效益與閱讀溫度的專業文章。</p></div>
+    <div class="service-card"><div class="service-icon">📱</div><p class="service-name">社群貼文</p><p class="service-desc">Instagram、Facebook 貼文規劃與撰寫，讓社群成為品牌最暖的溝通窗口。</p></div>
+    <div class="service-card"><div class="service-icon">💌</div><p class="service-name">電子報</p><p class="service-desc">把訂閱者變成真正的粉絲。撰寫讓人期待打開、讀完還想轉寄的電子報。</p></div>
+    <div class="service-card"><div class="service-icon">🌿</div><p class="service-name">品牌故事</p><p class="service-desc">挖掘品牌創立的初心與溫度，寫出讓人記住、讓人感動的品牌故事。</p></div>
+    <div class="service-card"><div class="service-icon">💬</div><p class="service-name">行銷顧問諮詢</p><p class="service-desc">不確定從哪裡開始？我們可以先聊聊，找出最適合你品牌的溝通策略。</p></div>
+  </div>
+</section>
+<section id="cases">
+  <div class="cases-header">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">精選合作案例</h2>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card featured">
+      <div>
+        <div class="case-num">01</div>
+        <p class="case-brand">麻醉狂｜醫療診所品牌</p>
+        <span class="case-tag">品牌故事 · 社群貼文</span>
+        <p class="case-desc">醫療場域往往給人距離感。透過「讓麻醉也能有溫度」的核心概念，重新書寫診所的品牌語言，讓患者在踏進診間前就感受到被照顧。</p>
+      </div>
+      <div class="case-img-placeholder">品牌視覺圖片</div>
+    </div>
+    <div class="case-card"><div class="case-num">02</div><p class="case-brand">中興米</p><span class="case-tag">品牌文案 · 品牌故事</span><p class="case-desc">回到一粒米的起點，用故事重新定義台灣在地農業的驕傲與溫情。</p></div>
+    <div class="case-card"><div class="case-num">03</div><p class="case-brand">雅聞保養品</p><span class="case-tag">部落格 · 產品文案</span><p class="case-desc">以植物與自然為語境，撰寫兼具品牌美感與轉換力的產品文案與保養知識文章。</p></div>
+    <div class="case-card"><div class="case-num">04</div><p class="case-brand">大漢家具</p><span class="case-tag">社群貼文 · 電子報</span><p class="case-desc">家不只是空間，是生活的容器。用貼近日常的文字，傳遞家具背後的生活哲學。</p></div>
+    <div class="case-card"><div class="case-num">05</div><p class="case-brand">你滋美得</p><span class="case-tag">品牌文案 · 社群</span><p class="case-desc">食物是情感的語言。撰寫讓人想吃、更想分享的食品品牌文字，喚起味覺記憶與溫暖連結。</p></div>
+  </div>
+</section>
+<section id="articles">
+  <div class="articles-header">
+    <div><p class="section-label">Writing</p><h2 class="section-title">最新文章</h2></div>
+    <a href="#" class="articles-more">查看全部文章 →</a>
+  </div>
+  <div class="articles-grid">
+    <div class="article-card"><div class="article-img"><div class="article-img-overlay"></div><div class="article-img-icon">🌿</div></div><div class="article-body"><p class="article-cat">品牌行銷</p><h3 class="article-title">為什麼診所需要有溫度的文字行銷？</h3><p class="article-excerpt">醫療品牌最常犯的錯，是把「專業」寫成了「冷漠」。當患者在恐懼中搜尋診所，他們需要的不是術語，而是被理解的感覺……</p><span class="article-date">2025 · 03</span></div></div>
+    <div class="article-card"><div class="article-img"><div class="article-img-overlay"></div><div class="article-img-icon">✍️</div></div><div class="article-body"><p class="article-cat">文案技巧</p><h3 class="article-title">一句 slogan 要怎麼寫才夠有力？</h3><p class="article-excerpt">好的 slogan 不是在說你有多厲害，而是在說客戶心裡那句他說不出口的話。五個步驟，帶你找到品牌最核心的那句話……</p><span class="article-date">2025 · 02</span></div></div>
+    <div class="article-card"><div class="article-img"><div class="article-img-overlay"></div><div class="article-img-icon">💌</div></div><div class="article-body"><p class="article-cat">內容行銷</p><h3 class="article-title">電子報為什麼是高端品牌最被忽略的武器</h3><p class="article-excerpt">在社群演算法越來越難捉摸的時代，電子報反而成了最穩定的品牌溝通管道。但要寫出讓人期待打開的電子報，你需要……</p><span class="article-date">2025 · 01</span></div></div>
+  </div>
+</section>
+<section id="contact">
+  <p class="section-label">Let's Work Together</p>
+  <h2 class="section-title">讓我們一起<br>讓你的品牌被看見</h2>
+  <div class="divider" style="margin: 24px auto;"></div>
+  <p class="contact-sub">無論你是想為診所建立更溫暖的品牌形象，<br>還是需要讓產品文案更有說服力——<br>歡迎告訴我你的需求，我們來聊聊。</p>
+  <form class="contact-form" onsubmit="return false;">
+    <div class="form-row">
+      <div class="form-group"><label>您的姓名</label><input type="text" placeholder="陳小姐 / 王先生"></div>
+      <div class="form-group"><label>電子信箱</label><input type="email" placeholder="your@email.com"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>品牌 / 公司名稱</label><input type="text" placeholder="您的品牌名稱"></div>
+      <div class="form-group"><label>服務需求</label><select><option value="">請選擇服務類型</option><option>品牌文案</option><option>部落格代寫</option><option>社群貼文</option><option>電子報</option><option>品牌故事</option><option>行銷顧問諮詢</option></select></div>
+    </div>
+    <div class="form-row"><div class="form-group full"><label>告訴我你的品牌故事與需求</label><textarea placeholder="簡單描述你的品牌、目前的行銷困境，或你希望透過文字達到的目標……"></textarea></div></div>
+    <button class="submit-btn" type="submit">送出合作邀約</button>
+  </form>
+</section>
+<footer>
+  <div><div class="footer-logo">Esther Hsieh</div><p class="footer-text" style="margin-top:8px;">用文字，讓品牌被看見、被感受</p></div>
+  <div class="footer-links"><a href="#">Facebook</a><a href="#">Instagram</a><a href="mailto:hsiehsieh@gmail.com">Email</a></div>
+</footer>
+</body>
+</html>
